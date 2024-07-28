@@ -28,6 +28,26 @@ Widget actionMobile(HomeViewModel homeViewModel, BuildContext context) {
             children: [
               IconButton(
                   onPressed: () {
+                    homeViewModel.diminueZoomPage();
+                  },
+                  icon: Icon(
+                    Icons.zoom_out,
+                    color: (homeViewModel.dark_mode
+                        ? homeViewModel.lightColor
+                        : homeViewModel.darkColor),
+                  )),
+              IconButton(
+                  onPressed: () {
+                    homeViewModel.aumentaZoomPage();
+                  },
+                  icon: Icon(
+                    Icons.zoom_in,
+                    color: (homeViewModel.dark_mode
+                        ? homeViewModel.lightColor
+                        : homeViewModel.darkColor),
+                  )),
+              IconButton(
+                  onPressed: () {
                     homeViewModel.mode();
                   },
                   icon: (homeViewModel.dark_mode

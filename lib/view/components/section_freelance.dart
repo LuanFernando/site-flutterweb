@@ -12,6 +12,7 @@ buildFreelance() {
       child: Center(
         child: Text('Freelance',
             style: TextStyle(
+                fontSize: homeViewModel.intiSizeFonte,
                 color: (homeViewModel.dark_mode
                     ? homeViewModel.lightColor
                     : homeViewModel.darkColor))),

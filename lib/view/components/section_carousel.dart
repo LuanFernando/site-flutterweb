@@ -11,11 +11,14 @@ buildSectionCarousel() {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(14.0),
             child: Text(
               'Habilidades',
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: homeViewModel.intiSizeFonte,
+              ),
             ),
           ),
           CarouselSlider(
@@ -34,7 +37,7 @@ buildSectionCarousel() {
                       child: Text(
                         item.name,
                         style: TextStyle(
-                            fontSize: 16.0,
+                            fontSize: homeViewModel.intiSizeFonte,
                             color: (homeViewModel.dark_mode
                                 ? homeViewModel.lightColor
                                 : homeViewModel.darkColor)),

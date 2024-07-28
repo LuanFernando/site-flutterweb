@@ -33,8 +33,12 @@ buildSectionAbout() {
                                   await homeViewModel
                                       .atribuicao(linkPhotoLaptop);
                                 },
-                                child: const Text(
-                                    "Foto de Goran Ivos na Unsplash")),
+                                child: Text(
+                                  "Foto de Goran Ivos na Unsplash",
+                                  style: TextStyle(
+                                    fontSize: homeViewModel.intiSizeFonte,
+                                  ),
+                                )),
                           ),
                         ],
                       ),
@@ -44,11 +48,16 @@ buildSectionAbout() {
                     flex: 1,
                     child: Container(
                       height: 400.0,
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Text(textAbout),
+                            Text(
+                              textAbout,
+                              style: TextStyle(
+                                fontSize: homeViewModel.intiSizeFonte,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -81,8 +90,12 @@ buildSectionAbout() {
                                   await homeViewModel
                                       .atribuicao(linkPhotoLaptop);
                                 },
-                                child: const Text(
-                                    "Foto de Goran Ivos na Unsplash")),
+                                child: Text(
+                                  "Foto de Goran Ivos na Unsplash",
+                                  style: TextStyle(
+                                    fontSize: homeViewModel.intiSizeFonte,
+                                  ),
+                                )),
                           ),
                         ],
                       ),
@@ -92,11 +105,16 @@ buildSectionAbout() {
                     flex: 1,
                     child: Container(
                       height: 400.0,
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            Text(textAbout),
+                            Text(
+                              textAbout,
+                              style: TextStyle(
+                                fontSize: homeViewModel.intiSizeFonte,
+                              ),
+                            ),
                           ],
                         ),
                       ),

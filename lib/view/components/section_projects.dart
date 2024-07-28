@@ -12,11 +12,14 @@ buildSectionProjects() {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(14.0),
             child: Text(
               "Projetos",
-              style: TextStyle(fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: homeViewModel.intiSizeFonte,
+              ),
             ),
           ),
           Expanded(

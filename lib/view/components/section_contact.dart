@@ -13,6 +13,7 @@ buildContact() {
         child: Text(
           'Contact',
           style: TextStyle(
+            fontSize: homeViewModel.intiSizeFonte,
             color: (homeViewModel.dark_mode
                 ? homeViewModel.lightColor
                 : homeViewModel.darkColor),

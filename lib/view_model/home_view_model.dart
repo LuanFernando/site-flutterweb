@@ -44,6 +44,16 @@ class HomeViewModel extends ChangeNotifier {
   Color get cellBlue => _cellBlue;
   Color get background => _background;
 
+  // Zoom
+  double _initSizeFonte = 14;
+  double get intiSizeFonte => _initSizeFonte;
+
+  int _diminueZoom = 0;
+  int get diminueZoom => _diminueZoom;
+
+  int _aumentaZoom = 0;
+  int get aumentaZoom => _aumentaZoom;
+
   // Voids
   Future<void> atribuicao(String url) async {
     final Uri uri = Uri.parse(url);
@@ -70,6 +80,55 @@ class HomeViewModel extends ChangeNotifier {
 
   void fetchCarouselItems() {
     _carousel = _service.getCarousel();
+    notifyListeners();
+  }
+
+  void diminueZoomPage() {
+    if (_diminueZoom == 0) {
+      _initSizeFonte = _initSizeFonte - 4;
+      _diminueZoom = 1;
+    } else if (_diminueZoom == 1) {
+      _initSizeFonte = _initSizeFonte - 4;
+      _diminueZoom = 2;
+    } else if (_diminueZoom == 2) {
+      _initSizeFonte = _initSizeFonte - 4;
+      _diminueZoom = 3;
+    }
+
+    gerenciadorEstadoZoomPage("-");
+    notifyListeners();
+  }
+
+  void aumentaZoomPage() {
+    if (_aumentaZoom == 0) {
+      _initSizeFonte = _initSizeFonte + 4;
+      _aumentaZoom = 1;
+    } else if (_aumentaZoom == 1) {
+      _initSizeFonte = _initSizeFonte + 4;
+      _aumentaZoom = 2;
+    } else if (_aumentaZoom == 2) {
+      _initSizeFonte = _initSizeFonte + 4;
+      _aumentaZoom = 3;
+    }
+
+    gerenciadorEstadoZoomPage("+");
+    notifyListeners();
+  }
+
+  void gerenciadorEstadoZoomPage(String? action) {
+    // TODO: continuar aqui
+    if (_aumentaZoom == 3 && _diminueZoom == 3) {
+      _aumentaZoom = 0;
+      _diminueZoom = 0;
+    } else if ((_diminueZoom != 3 && _diminueZoom != 0) && action == "-") {
+      _aumentaZoom = (_aumentaZoom - 1) > 0 && 3 < (_aumentaZoom - 1)
+          ? (_aumentaZoom - 1)
+          : 0;
+    } else if ((_aumentaZoom != 0 && _aumentaZoom != 3) && action == "+") {
+      _diminueZoom = (_diminueZoom - 1) > 0 && 3 < (_diminueZoom - 1)
+          ? (_diminueZoom - 1)
+          : 0;
+    }
     notifyListeners();
   }
 }
