@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:site_dev/service/home_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../model/carousel_item.dart';
+
 class HomeViewModel extends ChangeNotifier {
+  //
+  final HomeService _service;
+  List<CarouselItem> _carousel = [];
+  List<CarouselItem> get carousel => _carousel;
+
+  HomeViewModel(this._service) {
+    // resgata a lista de carousel
+    fetchCarouselItems();
+  }
+
   // responsive mobile
   bool _responsive_mobile = false;
   bool get responsive_mobile => _responsive_mobile;
@@ -18,18 +31,6 @@ class HomeViewModel extends ChangeNotifier {
 
   final String _imageAbout = "imgs/laptop.jpg";
   String get imageAbout => _imageAbout;
-
-  final List<String> _carousel = [
-    'HTML',
-    'CSS',
-    'PHP',
-    'SQL SERVER',
-    'MYSQL',
-    'FLUTTER',
-    'JAVA'
-  ];
-
-  List<String> get carousel => _carousel;
 
   final _cellRed = Color(0xffc73232);
   final _cellMustard = Color(0xffd7aa22);
@@ -64,6 +65,11 @@ class HomeViewModel extends ChangeNotifier {
 
   void responsiveMobile(bool mobile) {
     _responsive_mobile = mobile;
+    notifyListeners();
+  }
+
+  void fetchCarouselItems() {
+    _carousel = _service.getCarousel();
     notifyListeners();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:site_dev/service/home_service.dart';
 import 'package:site_dev/view_model/home_view_model.dart';
 
 import 'view/page_home.dart';
@@ -7,7 +8,7 @@ import 'view/page_home.dart';
 void main() {
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => HomeViewModel()),
+      ChangeNotifierProvider(create: (context) => HomeViewModel(HomeService())),
     ],
     child: const MyApp(),
   ));

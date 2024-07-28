@@ -32,7 +32,7 @@ buildSectionCarousel() {
                     ),
                     child: Center(
                       child: Text(
-                        item,
+                        item.name,
                         style: TextStyle(
                             fontSize: 16.0,
                             color: (homeViewModel.dark_mode
