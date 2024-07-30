@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:site_dev/service/home_service.dart';
 import 'package:site_dev/view_model/home_view_model.dart';
 
+import 'routes.dart';
 import 'view/page_home.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    // NOTE: Para usar o GoRouter precisa mudar de MaterialApp => MaterialApp.router
+    return MaterialApp.router(
       title: 'Meu Portifólio :: Dev',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -31,7 +33,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const PageHome(),
+      // home: const PageHome(),
+      routerConfig: router,
     );
   }
 }

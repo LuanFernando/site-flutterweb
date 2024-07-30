@@ -5,3 +5,5 @@ const linkPhotoLaptop =
     "https://unsplash.com/pt-br/@goran_ivos?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";
 const linkPhotoLaptop2 =
     "https://unsplash.com/pt-br/fotografias/ligou-o-macbook-air-na-secretaria-iOykDIkZLQw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash";
+
+const linkMqGestaoControleFinanceiro = "https://mqgestao.com/";

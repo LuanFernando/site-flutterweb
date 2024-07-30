@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:site_dev/text.dart';
 import 'package:site_dev/view_model/home_view_model.dart';
 
 buildSectionProjects() {
@@ -44,42 +46,185 @@ buildSectionProjects() {
                 ],
                 children: [
                   // Column 1
-                  gridArea('r').containing(Container(
+                  gridArea('r').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
-                  gridArea('y').containing(Container(
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {
+                            homeViewModel.routes(context, 'elevator-app');
+
+                            // context.go('/');
+                          },
+                          child: Text(
+                            'Elevator app',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  gridArea('y').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () async {
+                            await homeViewModel
+                                .atribuicao(linkMqGestaoControleFinanceiro);
+                          },
+                          child: Text(
+                            'MQ Gestão App',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   // Column 2
-                  gridArea('R').containing(Container(
+                  gridArea('R').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 1',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   // Column 3
-                  gridArea('B').containing(Container(
+                  gridArea('B').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
-                  gridArea('Y').containing(Container(
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 2',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  gridArea('Y').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
-                  gridArea('g').containing(Container(
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 3',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  gridArea('g').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 4',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   // Column 4
-                  gridArea('b').containing(Container(
+                  gridArea('b').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 5',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   // Column 5
-                  gridArea('yy').containing(Container(
+                  gridArea('yy').containing(
+                    Container(
                       color: (homeViewModel.dark_mode
                           ? homeViewModel.darkColor
-                          : homeViewModel.lightColor))),
+                          : homeViewModel.lightColor),
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'App 6',
+                            style: TextStyle(
+                              fontSize: homeViewModel.intiSizeFonte,
+                              color: (homeViewModel.dark_mode
+                                  ? homeViewModel.lightColor
+                                  : homeViewModel.darkColor),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

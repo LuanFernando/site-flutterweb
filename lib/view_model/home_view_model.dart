@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:site_dev/service/home_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -130,5 +131,14 @@ class HomeViewModel extends ChangeNotifier {
           : 0;
     }
     notifyListeners();
+  }
+
+  void routes(BuildContext context, String route) {
+    if (route.isNotEmpty) {
+      print(route);
+      context.go('/$route');
+    } else {
+      context.go('/');
+    }
   }
 }
