@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../view_model/elevator_app_view_model.dart';
 
-elevantorAppDesktop() {
+elevantorAppMobile() {
   return Consumer<ElevatorAppViewModel>(
       builder: (context, elevatorAppViewModel, child) {
     return Padding(
@@ -15,8 +15,8 @@ elevantorAppDesktop() {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Prédio
               Column(
@@ -102,7 +102,7 @@ elevantorAppDesktop() {
                   ),
                   Container(
                     height: 8.0,
-                    width: 250.0,
+                    width: 100.0,
                     color: Colors.green,
                   ),
                   // Garagem
@@ -130,7 +130,7 @@ elevantorAppDesktop() {
                   children: [
                     Text(
                       "ANDAR: ${elevatorAppViewModel.andarAtual}",
-                      style: const TextStyle(fontSize: 48.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
                     const SizedBox(
                       height: 12.0,
@@ -144,7 +144,7 @@ elevantorAppDesktop() {
                       elevatorAppViewModel.messageAlert,
                       style: const TextStyle(
                           color: Colors.redAccent,
-                          fontSize: 24.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
